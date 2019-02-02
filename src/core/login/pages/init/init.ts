@@ -95,11 +95,13 @@ export class CoreLoginInitPage {
             }
         } else {
             return this.sitesProvider.hasSites().then((hasSites) => {
+                
                 if (hasSites) {
                     return this.navCtrl.setRoot('CoreLoginSitesPage');
                 } else {
                     return this.loginHelper.goToAddSite(true);
                 }
+
             });
         }
     }
